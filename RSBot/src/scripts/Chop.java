@@ -13,7 +13,7 @@ public abstract class Chop extends Task<ClientContext> {
     @Override
     public boolean activate()
     {
-        return ctx.backpack.select().count() < 28 &&
+        return ctx.inventory.select().count() < 28 &&
                 !ctx.objects.select().id(treeIds).isEmpty() &&
                 ctx.players.local().animation() == -1;
     }
